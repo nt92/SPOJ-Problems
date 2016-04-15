@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <list>
+#include <string>
 using namespace std;
 
 class Graph
@@ -23,13 +24,24 @@ private:
         visitedList[n] = true;
         
         //Iterate through the adjacency list of n and recursively visit each node adjacent to n
+        list<int>::iterator i;
+        for(i = adjacencyList[n].begin(); i != adjacencyList[n].end(); ++i)
+        {
+            if(!visitedList[*i])
+                DFSNode(*i, visitedList);
+            else if(visitedList[*i])
+                treeFlag = "NO";
+        }
     }
     
 public:
+    //Flag for whether or not the Graph is a tree
+    string treeFlag = "YES";
+    
     //Initialize a new graph with N nodes and create an adjacency list for each node
     Graph(int N)
     {
-        this->N = N;
+        this->N = N + 1;
         adjacencyList = new list<int>[N];
     }
     
@@ -37,7 +49,21 @@ public:
     void addEdge(int a, int b)
     {
         adjacencyList[a].push_back(b);
-        adjacencyList[b].push_back(a);
+        //adjacencyList[b].push_back(a);
+    }
+    
+    //Does a DFS of the whole graph
+    void DFS()
+    {
+        bool *visitedList = new bool[N];
+        for(int i = 0; i < N; i++)
+            visitedList[i] = false;
+        
+        for(int i = 0; i < N; i++)
+        {
+            if(visitedList[i] == false)
+                DFSNode(i, visitedList);
+        }
     }
 };
 
@@ -45,6 +71,20 @@ int main(int argc, const char * argv[])
 {
     int N, M;
     cin >> N >> M;
+    
+    Graph DFSGraph(N);
+    
+    for(int i = 0; i < M; i++)
+    {
+        int a, b;
+        cin >> a >> b;
+        
+        DFSGraph.addEdge(a, b);
+    }
+    
+    DFSGraph.DFS();
+    
+    cout << DFSGraph.treeFlag;
     
     return 0;
 }
