@@ -25,7 +25,7 @@ private:
         
         //Iterate through the adjacency list of n and recursively visit each node adjacent to n
         list<int>::iterator i;
-        for(i = adjacencyList[n].begin(); i != adjacencyList[n].end(); ++i)
+        for(i = adjacencyList[n].begin(); i != adjacencyList[n].end(); i++)
         {
             if(!visitedList[*i])
                 DFSNode(*i, visitedList);
@@ -41,8 +41,9 @@ public:
     //Initialize a new graph with N nodes and create an adjacency list for each node
     Graph(int N)
     {
+        //N + 1 so that there is no index 0 error
         this->N = N + 1;
-        adjacencyList = new list<int>[N];
+        adjacencyList = new list<int>[N + 1];
     }
     
     //Connect a and b
