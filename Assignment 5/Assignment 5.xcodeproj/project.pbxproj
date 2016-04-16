@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1646F141CC29D0800FC226D /* Nikhil_Thota_80516143_INVCNT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1646F131CC29D0800FC226D /* Nikhil_Thota_80516143_INVCNT.cpp */; };
 		A1C6835A1CC15DC2005AD3BD /* Nikhil_Thota_80516143_PTO7Y.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1C683591CC15DC2005AD3BD /* Nikhil_Thota_80516143_PTO7Y.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A1646F131CC29D0800FC226D /* Nikhil_Thota_80516143_INVCNT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Nikhil_Thota_80516143_INVCNT.cpp; sourceTree = "<group>"; };
 		A1C683561CC15DC2005AD3BD /* Assignment 5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Assignment 5"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C683591CC15DC2005AD3BD /* Nikhil_Thota_80516143_PTO7Y.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Nikhil_Thota_80516143_PTO7Y.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				A1C683591CC15DC2005AD3BD /* Nikhil_Thota_80516143_PTO7Y.cpp */,
+				A1646F131CC29D0800FC226D /* Nikhil_Thota_80516143_INVCNT.cpp */,
 			);
 			path = "Assignment 5";
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1646F141CC29D0800FC226D /* Nikhil_Thota_80516143_INVCNT.cpp in Sources */,
 				A1C6835A1CC15DC2005AD3BD /* Nikhil_Thota_80516143_PTO7Y.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +243,7 @@
 				A1C6835F1CC15DC2005AD3BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
