@@ -11,22 +11,22 @@ using namespace std;
 
 struct Node
 {
-    int data;
+    long long data;
     Node *next = NULL;
     
-    Node(int d)
+    Node(long long d)
     {
         data = d;
     }
     
-    Node(int d, Node *n)
+    Node(long long d, Node *n)
     {
         data = d;
         next = n;
     }
 };
 
-bool getSign(int a)
+bool getSign(long long a)
 {
     if (a >= 0)
         return true;
@@ -34,7 +34,7 @@ bool getSign(int a)
         return false;
 }
 
-int absValue(int a)
+long long absValue(long long a)
 {
     if (a >= 0)
         return a;
@@ -50,7 +50,7 @@ private:
 public:
     Node *head = NULL;
     
-    void addNode(int val)
+    void addNode(long long val)
     {
         Node *p;
         
@@ -67,15 +67,15 @@ public:
         }
     }
     
-    int doBusiness()
+    long long doBusiness()
     {
 //        Node *p = head;
 //        Node *n = p->next;
-//        int count = 0;
+//        long long count = 0;
 //        
 //        while(n)
 //        {
-//            int m = 1;
+//            long long m = 1;
 //            bool pSign = getSign(p->data);
 //            
 //            while(pSign == getSign(n->data) || n->data == 0)
@@ -101,7 +101,7 @@ public:
 //        
 //        return count;
         
-        int count = 0;
+        long long count = 0;
         
         Node *p = head;
         
@@ -120,15 +120,15 @@ public:
 
 int main()
 {
-    int n; cin >> n;
+    long long n; cin >> n;
     
     while(n != 0)
     {
         LinkedList list;
         
-        for(int i = 0; i < n; i++)
+        for(long long i = 0; i < n; i++)
         {
-            int in; cin >> in;
+            long long in; cin >> in;
             list.addNode(in);
         }
         
