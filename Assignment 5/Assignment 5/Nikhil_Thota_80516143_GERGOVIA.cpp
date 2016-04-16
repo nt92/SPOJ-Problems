@@ -26,6 +26,22 @@ struct Node
     }
 };
 
+bool getSign(int a)
+{
+    if (a >= 0)
+        return true;
+    else
+        return false;
+}
+
+int absValue(int a)
+{
+    if (a >= 0)
+        return a;
+    else
+        return -a;
+}
+
 class LinkedList
 {
 private:
@@ -51,22 +67,60 @@ public:
         }
     }
     
-    void printList()
+    int doBusiness()
     {
+//        Node *p = head;
+//        Node *n = p->next;
+//        int count = 0;
+//        
+//        while(n)
+//        {
+//            int m = 1;
+//            bool pSign = getSign(p->data);
+//            
+//            while(pSign == getSign(n->data) || n->data == 0)
+//            {
+//                n = n->next;
+//                m++;
+//            }
+//            
+//            if(absValue(p->data) > absValue(n->data))
+//            {
+//                count += m * absValue(n->data);
+//                p->data += n->data;
+//                n->data = 0;
+//            }
+//            else
+//            {
+//                count += m * absValue(p->data);
+//                n->data += p->data;
+//                p->data = 0;
+//                p = p->next;
+//            }
+//        }
+//        
+//        return count;
+        
+        int count = 0;
+        
         Node *p = head;
+        
         while(p)
         {
-            cout << p->data << "\n";
+            count += absValue(p->data);
+            if(p->next)
+                p->next->data += p->data;
+            
             p = p->next;
         }
+        
+        return count;
     }
 };
 
 int main()
 {
     int n; cin >> n;
-    
-    LinkedList output;
     
     while(n != 0)
     {
@@ -77,5 +131,8 @@ int main()
             int in; cin >> in;
             list.addNode(in);
         }
+        
+        cout << list.doBusiness() << endl;
+        cin >> n;
     }
 }
