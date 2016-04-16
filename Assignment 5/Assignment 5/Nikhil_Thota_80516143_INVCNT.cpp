@@ -9,9 +9,9 @@
 #include <iostream>
 using namespace std;
 
-int Merge(int *L, int *R, int *A, int lenL, int lenR)
+long long Merge(long long *L, long long *R, long long *A, long long lenL, long long lenR)
 {
-    int i = 0; int j = 0; int k = 0; int inv = 0;
+    long long i = 0; long long j = 0; long long k = 0; long long inv = 0;
     while(i < lenL && j < lenR)
     {
         if(L[i] <= R[j])
@@ -44,25 +44,25 @@ int Merge(int *L, int *R, int *A, int lenL, int lenR)
 }
 
 
-int MergeSort(int *A, int lenA)
+long long MergeSort(long long *A, long long lenA)
 {
-    int inv = 0;
+    long long inv = 0;
     if(lenA < 2)
         return inv;
     
-    int mid = lenA/2;
-    int left[mid];
-    int right[lenA - mid];
+    long long mid = lenA/2;
+    long long left[mid];
+    long long right[lenA - mid];
     
-    for(int i = 0; i < mid; i++)
+    for(long long i = 0; i < mid; i++)
     {
-        int temp = A[i];
+        long long temp = A[i];
         left[i] = temp;
     }
     
-    for(int i = 0; i < lenA - mid; i++)
+    for(long long i = 0; i < lenA - mid; i++)
     {
-        int temp = A[mid + i];
+        long long temp = A[mid + i];
         right[i] = temp;
     }
     
@@ -75,15 +75,15 @@ int MergeSort(int *A, int lenA)
 
 int main()
 {
-    int t; cin >> t;
+    long long t; cin >> t;
     
-    for(int i = 0; i < t; i++)
+    for(long long i = 0; i < t; i++)
     {
-        int aLen; cin >> aLen;
-        int array[aLen];
-        for(int j = 0; j < aLen; j++)
+        long long aLen; cin >> aLen;
+        long long array[aLen];
+        for(long long j = 0; j < aLen; j++)
         {
-            int temp; cin >> temp;
+            long long temp; cin >> temp;
             array[j] = temp;
         }
         cout << endl << MergeSort(array, aLen);
